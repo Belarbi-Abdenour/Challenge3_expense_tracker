@@ -16,7 +16,7 @@
    <body>
       <div class="main-wrapper">
 
-        <div class="header">
+         <div class="header">
 
             <div class="header-left">
                 <a href="index.html" class="logo">
@@ -38,123 +38,45 @@
             </a>
 
 
-            <ul class="nav user-menu">
 
-                <li class="nav-item dropdown noti-dropdown">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <i class="far fa-bell"></i> <span class="badge badge-pill">3</span>
-                    </a>
-                    <div class="dropdown-menu notifications">
-                        <div class="topnav-dropdown-header">
-                            <span class="notification-title">Notifications</span>
-                            <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
-                        </div>
-                        <div class="noti-content">
-                            <ul class="notification-list">
-                                <li class="notification-message">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="avatar avatar-sm">
-                                                <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/profiles/avatar-02.jpg">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Carlson Tech</span> has
-                                                    approved <span class="noti-title">your estimate</span></p>
-                                                <p class="noti-time"><span class="notification-time">4 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="avatar avatar-sm">
-                                                <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/profiles/avatar-11.jpg">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">International Software
-                                                        Inc</span> has sent you a invoice in the amount of <span
-                                                        class="noti-title">$218</span></p>
-                                                <p class="noti-time"><span class="notification-time">6 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                
-                            </ul>
-                        </div>
-                        <div class="topnav-dropdown-footer">
-                            <a href="#">View all Notifications</a>
-                        </div>
-                    </div>
-                </li>
-
-
-                <li class="nav-item dropdown has-arrow">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg"
-                                width="31" alt="Ryan Taylor"></span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <div class="user-header">
-                            <div class="avatar avatar-sm">
-                                <img src="assets/img/profiles/avatar-01.jpg" alt="User Image"
-                                    class="avatar-img rounded-circle">
-                            </div>
-                            <div class="user-text">
-                                <h6>bendi Amine</h6>
-                                <p class="text-muted mb-0">Student</p>
-                            </div>
-                        </div>
-                        <a class="dropdown-item" href="profile.html">My Profile</a>
-                        <a class="dropdown-item" href="login.html">Logout</a>
-                    </div>
-                </li>
 
             </ul>
 
         </div>
-         <div class="sidebar" id="sidebar">
+
+
+        <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
-                        <li class="menu-title">
-                            <span>Main Menu</span>
-                        </li>
                         <li class="submenu">
                             <a href="#"><i class="fas fa-user-graduate"></i> <span> Dashboard</span> <span
                                     class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="index.html">Student Dashboard</a></li>
+                                <li><a href="index.php">User Dashboard</a></li>
                             </ul>
-                        </li>
-                        <li class="submenu">
-                            <a href="#"><i class="fas fa-user-graduate"></i> <span> Students</span> <span
-                                    class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="students.html">Student List</a></li>
-                                <li><a href="student-details.html">Student View</a></li>
-                                <li><a href="add-student.html">Student Add</a></li>
-                                <li><a href="edit-student.html">Student Edit</a></li>
+                                <li><a href="index.php">Sub_User Dashboard</a></li>
                             </ul>
                         </li>
+
 
                         <li class="menu-title">
                             <span>Management</span>
                         </li>
 
                         <li >
-                            <a href="event.html"><i class="fas fa-calendar-day"></i> <span>Events</span></a>
+                            <a href="revenues.html"><i class="fas fa-calendar-day"></i> <span>Revenues </span></a>
                         </li>
                         <li >
-                            <a href="Absence.html"><i class="fas fa-calendar-day"></i> <span>Absence</span></a>
+                            <a href="categories.html"><i class="fas fa-calendar-day"></i> <span>Categories</span></a>
                         </li>
                         <li >
-                            <a href="Resources.html"><i class="fas fa-calendar-day"></i> <span>Resources</span></a>
+                            <a href="expenses.html"><i class="fas fa-calendar-day"></i> <span>Expenses</span></a>
+                        </li>
+
+                        <li >
+                            <a href="sub_users.html"><i class="fas fa-calendar-day"></i> <span>Sub_users</span></a>
                         </li>
 
                     </ul>
@@ -186,137 +108,15 @@
                               <table class="table table-hover table-center mb-0 datatable">
                                  <thead>
                                     <tr>
-                                       <th>ID</th>
-                                       <th>Name</th>
-                                       <th>Class</th>
-                                       <th>DOB</th>
-                                       <th>Parent Name</th>
-                                       <th>Mobile Number</th>
-                                       <th>Address</th>
+                                       <th>ID_expense</th>
+                                       <th>description</th>
+                                       <th>amount</th>
+                                       <th>category_id (to change later as select or searchbox)</th>
                                        <th class="text-right">Action</th>
                                     </tr>
                                  </thead>
                                  <tbody>
-                                    <tr>
-                                       <td>PRE2209</td>
-                                       <td>
-                                          <h2 class="table-avatar">
-                                             <a href="student-details.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-01.jpg" alt="User Image"></a>
-                                             <a href="student-details.html">Aaliyah</a>
-                                          </h2>
-                                       </td>
-                                       <td>10 A</td>
-                                       <td>2 Feb 2002</td>
-                                       <td>Jeffrey Wong</td>
-                                       <td>097 3584 5870</td>
-                                       <td>911 Deer Ridge Drive,USA</td>
-                                       <td class="text-right">
-                                          <div class="actions">
-                                             <a href="edit-student.html" class="btn btn-sm bg-success-light mr-2">
-                                             <i class="fas fa-pen"></i>
-                                             </a>
-                                             <a href="#" class="btn btn-sm bg-danger-light">
-                                             <i class="fas fa-trash"></i>
-                                             </a>
-                                          </div>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <td>PRE2213</td>
-                                       <td>
-                                          <h2 class="table-avatar">
-                                             <a href="student-details.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></a>
-                                             <a href="student-details.html">Malynne</a>
-                                          </h2>
-                                       </td>
-                                       <td>8 A</td>
-                                       <td>3 June 2010</td>
-                                       <td>Fields Malynne</td>
-                                       <td>242 362 3100</td>
-                                       <td>Bacardi Rd P.O. Box N-4880, New Providence</td>
-                                       <td class="text-right">
-                                          <div class="actions">
-                                             <a href="edit-student.html" class="btn btn-sm bg-success-light mr-2">
-                                             <i class="fas fa-pen"></i>
-                                             </a>
-                                             <a href="#" class="btn btn-sm bg-danger-light">
-                                             <i class="fas fa-trash"></i>
-                                             </a>
-                                          </div>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <td>PRE2143</td>
-                                       <td>
-                                          <h2 class="table-avatar">
-                                             <a href="student-details.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-02.jpg" alt="User Image"></a>
-                                             <a href="student-details.html">Levell Scott</a>
-                                          </h2>
-                                       </td>
-                                       <td>10 A</td>
-                                       <td>12 Apr 2002</td>
-                                       <td>Jeffrey Scott</td>
-                                       <td>026 7318 4366</td>
-                                       <td>P.O. Box: 41, Gaborone</td>
-                                       <td class="text-right">
-                                          <div class="actions">
-                                             <a href="edit-student.html" class="btn btn-sm bg-success-light mr-2">
-                                             <i class="fas fa-pen"></i>
-                                             </a>
-                                             <a href="#" class="btn btn-sm bg-danger-light">
-                                             <i class="fas fa-trash"></i>
-                                             </a>
-                                          </div>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <td>PRE2431</td>
-                                       <td>
-                                          <h2 class="table-avatar">
-                                             <a href="student-details.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></a>
-                                             <a href="student-details.html">Minnie</a>
-                                          </h2>
-                                       </td>
-                                       <td>11 C</td>
-                                       <td>24 Feb 2000</td>
-                                       <td>J Shaffer</td>
-                                       <td>952 512 4909</td>
-                                       <td>4771 Oral Lake Road, Golden Valley</td>
-                                       <td class="text-right">
-                                          <div class="actions">
-                                             <a href="edit-student.html" class="btn btn-sm bg-success-light mr-2">
-                                             <i class="fas fa-pen"></i>
-                                             </a>
-                                             <a href="#" class="btn btn-sm bg-danger-light">
-                                             <i class="fas fa-trash"></i>
-                                             </a>
-                                          </div>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <td>PRE1534</td>
-                                       <td>
-                                          <h2 class="table-avatar">
-                                             <a href="student-details.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-04.jpg" alt="User Image"></a>
-                                             <a href="student-details.html">Lois A</a>
-                                          </h2>
-                                       </td>
-                                       <td>10 A</td>
-                                       <td>22 Jul 2006</td>
-                                       <td>Cleary Wong</td>
-                                       <td>413 289 1314</td>
-                                       <td>2844 Leverton Cove Road, Palmer</td>
-                                       <td class="text-right">
-                                          <div class="actions">
-                                             <a href="edit-student.html" class="btn btn-sm bg-success-light mr-2">
-                                             <i class="fas fa-pen"></i>
-                                             </a>
-                                             <a href="#" class="btn btn-sm bg-danger-light">
-                                             <i class="fas fa-trash"></i>
-                                             </a>
-                                          </div>
-                                       </td>
-                                    </tr>
+
                                     <tr>
                                        <td>PRE2153</td>
                                        <td>
