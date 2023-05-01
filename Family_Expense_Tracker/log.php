@@ -14,37 +14,51 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     $Password_User = validate($_POST["password"]);
 
     if (empty($Supervisor_Mail)) {
-        header("Location: login.php?error=email is required");
+        header("Location: index.php?error=email is required");
         exit();
     } else if (empty($Password_User)) {
-        header("Location: login.php?error=password is required");
+        header("Location: index.php?error=password is required");
         exit();
     } else {
+        session_start();
         $hashed_password = md5($Password_User); 
-        $sql = "SELECT * FROM supervisor WHERE Supervisor_Mail='$Supervisor_Mail' AND Password_User='$hashed_password' ;"; // removed password check
+        if(isset($_POST['Loginuser'])) {
+            $flag=1;
+            $sql = "SELECT * FROM user WHERE email='$Supervisor_Mail' AND password_hash='$hashed_password' ;"; // removed password check
+
+        } elseif(isset($_POST['Loginsubuser'])) {
+            $sql = "SELECT * FROM subuser WHERE email='$Supervisor_Mail' AND password_hash='$hashed_password' ;"; // removed password check
+            $flag=0;
+
+        }
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) === 1) {
-            $row = mysqli_fetch_row($result);
-            $email = $row[4];
-            session_start();
-            $_SESSION['Supervisor_Id'] = $row[0];
-            header("Location: StudentPages/children.php");
+            
+            $row = $result->fetch_assoc();
+            $user_id = $row['id']; 
+         
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['flag']=$flag;
+         
+            if(isset($_POST['Loginuser'])) {
+                header("Location: StudentPages");
+            }
+            elseif(isset($_POST['Loginsubuser'])) {
+                header("Location: StudentPages/sub_user.php");          
+            }
+            
             
         } else {
-            $sql = "SELECT * FROM supervisor WHERE Supervisor_Mail='$Supervisor_Mail' ;"; // removed password check
-            $result = mysqli_query($db, $sql);
-            if(mysqli_num_rows($result)===1){
-                header("Location: login.php?error=Incorrect password");
-            } else{
+            
                 
-                header("Location: login.php?error=Incorrect email");
+                header("Location: index.php?error=Incorrect info");
 
-            }
+            
             exit();
         }
     }
 } else {
-    header("Location: login.php?error");
+    header("Location: index.php?error");
     exit();
 }

@@ -40,7 +40,7 @@ html {
 	height: 100%;
 }
 body {
-	background-color: #fff;
+	background-color: rgb(51, 56, 58);
 	color: #333;
 	font-family: 'Poppins', sans-serif;
 	font-size: 1rem;
@@ -67,11 +67,11 @@ a:focus {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-	-webkit-box-shadow: 0 0 0px 1000px white inset !important;
-	box-shadow: 0 0 0px 1000px white inset !important;
+	-webkit-box-shadow: 0 0 0px 1000px rgb(51, 56, 58) inset !important;
+	box-shadow: 0 0 0px 1000px rgb(51, 56, 58) inset !important;
 }
 .form-control {
-    border: 1px solid #ddd;
+    border: 1px solid rgb(51, 56, 58);
     box-shadow: none;
     color: #333;
     font-size: 15px;
@@ -86,7 +86,7 @@ input:-webkit-autofill:focus {
 	height: calc(1.5em + .5rem + 2px);
 }
 .form-control-sm {
-	background-color: #fff;
+	background-color: rgb(51, 56, 58);
 }
 
 .form-control.form-control-lg {
@@ -155,7 +155,7 @@ ul, ol {
 	width: 100%;
 }
 .table-striped > tbody > tr:nth-of-type(2n+1) {
-	background-color: #f8f9fa;
+	background-color: rgb(51, 56, 58);
 }
 .table.no-border > tbody > tr > td,
 .table > tbody > tr > th,
@@ -215,7 +215,7 @@ table.table td h2 span {
 	vertical-align: middle;
 }
 .table-hover tbody tr:hover {
-	background-color: #f7f7f7;
+	background-color: rgb(51, 56, 58);
 }
 .table-hover tbody tr:hover td {
 	color: #474648;
@@ -257,7 +257,7 @@ table.table td h2 span {
 }
 .table .thead-light th {
     color: #495057;
-    background-color: #f8f9fa;
+    background-color: rgb(51, 56, 58);
     border-color: #eff2f7;
 }
 
@@ -334,7 +334,7 @@ table.table td h2 span {
     box-shadow: unset;
 }
 .btn-white {
-	background-color: #fff;
+	background-color: rgb(51, 56, 58);
 	border: 1px solid #ccc;
 	color: #333;
 }
@@ -342,13 +342,13 @@ table.table td h2 span {
 	border-radius: 50px;
 }
 .bg-primary {
-	background-color: #fff5d9 !important;
+	background-color: rgb(51, 56, 58) !important;
 }
 .pro-bg-primary, .badge-primary {
 	background-color: #fdbb38 !important;
 }
 .bg-light {
-    background-color: #ebebff!important;
+    background-color: rgb(51, 56, 58)!important;
 }
 a.bg-primary:focus, 
 a.bg-primary:hover, 
@@ -403,7 +403,7 @@ button.bg-danger:hover {
     background-color: #e63333 !important;
 }
 .bg-white {
-	background-color: #fff;
+	background-color:rgb(51, 56, 58);
 }
 .bg-purple,
 .badge-purple {
@@ -1004,7 +1004,7 @@ div.dataTables_wrapper div.dataTables_info {
 	border-radius: 0;
 }
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-    background-color: #eee;
+    background-color: rgb(51, 56, 58);
     border-color: transparent;
 	color: #333;
 }
@@ -3465,4 +3465,34 @@ table.table-inbox tbody tr.checked {
 		width: 310px;
 		height: 355px;
 	}
+}
+.header {
+    background-color: rgb(24, 26, 27);
+    border-bottom: 1px solid rgb(51, 56, 58);
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1001;
+    height: 60px;
+}
+
+.header .header-left {
+    float: left;
+    height: 60px;
+    padding: 0 20px;
+    position: relative;
+    width: 320px;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+    background-color:  rgb(19, 21, 22) ;
+    border-bottom: 1px solid  rgb(19, 21, 22);
+    border-right: 1px solid  rgb(19, 21, 22);
+    display: flex;
+    align-items: center;
+}
+
+.header .header-left .logo img {
+    max-height: 55px;
+    width: auto;
 }

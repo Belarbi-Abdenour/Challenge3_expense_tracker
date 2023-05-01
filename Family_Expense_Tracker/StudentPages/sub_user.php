@@ -144,9 +144,11 @@ $flag = $_SESSION['flag'];
                     <div class="row">
                         <div class="col-sm-12">
                             <h3 class="page-title">Welcome
-                                <?php
-                                         $userid =$_SESSION['user_id'];
-                                           $sql1 = "SELECT name FROM user WHERE id = '$userid';";
+                            <?php
+                                  include "connexion.php";
+                                        $subuserid = $_SESSION['user_id'];
+                                     
+                                           $sql1 = "SELECT name FROM subuser WHERE id = '$subuserid';";
                                            $result1 = mysqli_query($db,$sql1);
                                            $username = mysqli_fetch_row($result1);
                                         // Use the count of subusers as needed
@@ -156,7 +158,7 @@ $flag = $_SESSION['flag'];
                             </h3>
                             <ul class="breadcrumb">
 
-                                <li class="breadcrumb-item active">User Dashboard</li>
+                                <li class="breadcrumb-item active">SubUser Dashboard</li>
                             </ul>
                         </div>
                     </div>
@@ -173,85 +175,23 @@ $flag = $_SESSION['flag'];
                                     </div>
                                     <div class="db-info">
                                         <h3>
-                                            <?php
-                                        $userid =$_SESSION['user_id'];
+                                        <?php
+                                        $subuserid =$_SESSION['user_id'];
                                           
-                                           $sql = "SELECT COUNT(*) FROM subuser WHERE user_id = '$userid';";
+                                           $sql = "SELECT sum(amount) FROM transfer WHERE to_user_id = '$subuserid';";
                                            $result = mysqli_query($db,$sql);
-                                           $subuser_count = mysqli_fetch_row($result);
-                                        // Use the count of subusers as needed
-                                        echo $subuser_count[0];
-
+                                           $subuser = mysqli_fetch_row($result);
+                                        
+                                        echo $subuser[0];
                                         ?>
                                         </h3>
-                                        <h6>All Subusers</h6>
+                                        <h6>Balance</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="card bg-six w-100">
-                            <div class="card-body">
-                                <div class="db-widgets d-flex justify-content-between align-items-center">
-                                    <div class="db-icon">
-                                        <i class="fas fa-clipboard-list"></i>
-                                    </div>
-                                    <div class="db-info">
-                                        <h3>
-                                            <?php
-                                            $userid =$_SESSION['user_id'];
-                                            $sql2 = " SELECT sum(amount) FROM revenue WHERE user_id = '$userid';";
-                                            $res1 = mysqli_query($db,$sql2);
-                                            $sql3 = " SELECT sum(amount)  FROM expense WHERE user_id = '$userid';";
-                                            $res2 = mysqli_query($db,$sql3);
-                                            $sum1 = mysqli_fetch_row($res1);
-                                            $sum2 = mysqli_fetch_row($res2);
-                                            $userbalnce = $sum1[0] -$sum2[0];
-                                            $sql3 = " SELECT sum(amount)  FROM transfer WHERE from_user_id = '$userid';";
-                                            $exp= mysqli_query($db,$sql3);
-                                            $sum2 = mysqli_fetch_row($exp);
-                                           $balnceglobal = -$sum2[0] + $userbalnce ;
-                                        // Use the count of subusers as needed
-                                        echo $balnceglobal;
 
-                                        ?>
-                                        </h3>
-                                        <h6>Global balnce </h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="card bg-ten w-100">
-                            <div class="card-body">
-                                <div class="db-widgets d-flex justify-content-between align-items-center">
-                                    <div class="db-icon">
-                                        <i class="fas fa-clipboard-list"></i>
-                                    </div>
-                                    <div class="db-info">
-                                        <h3>
-                                            <?php
-                                         $userid =$_SESSION['user_id'];
-                                        
-                                        $sql2 = " SELECT sum(amount) FROM revenue WHERE user_id = '$userid';";
-                                        $res1 = mysqli_query($db,$sql2);
-                                        $sql3 = " SELECT sum(amount)  FROM expense WHERE user_id = '$userid';";
-                                        $res2 = mysqli_query($db,$sql3);
-                                        $sum1 = mysqli_fetch_row($res1);
-                                        $sum2 = mysqli_fetch_row($res2);
-                                        $userbalnce = $sum1[0] -$sum2[0];
-                                        
-                                        echo $userbalnce;
-
-                                        ?>
-                                        </h3>
-                                        <h6>User Balance</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
@@ -261,7 +201,10 @@ $flag = $_SESSION['flag'];
 
         </div>
 
-        
+
+
+
+
 
         <footer>
 

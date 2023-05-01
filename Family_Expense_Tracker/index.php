@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-   <!-- Mirrored from preschool.dreamguystech.com/html-template/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:39 GMT -->
+   <!-- Mirrored from preschool.dreamguystech.com/html-template/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:39 GMT -->
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -18,12 +18,10 @@
             <div class="container">
                <div class="loginbox">
                   <div class="login-left">
-                     <img class="img-fluid" src="StudentPages/assets/img/logo-white.png" alt="Logo">
                   </div>
                   <div class="login-right">
                      <div class="login-right-wrap">
                         <h1>Login</h1>
-                        <p class="account-subtitle">Supervisor access side</p>
                         <form action="log.php" method="POST" >
                         <?php
                if(isset($_GET["error"])){ 
@@ -37,9 +35,14 @@
                               <input class="form-control" type="password" placeholder="Password" name="password" required>
                            </div>
                            <div class="form-group">
-                              <input class="btn btn-primary btn-block" type="submit" name="Login">
+                              <input value='User log in' class="btn btn-primary btn-block" type="submit" name="Loginuser">
                            </div>
+                           <div class="form-group">
+                              <input value='SubUser log in' class="btn btn-primary btn-block" type="submit" name="Loginsubuser">
+                           </div>
+                           <a href="register.php"> Register</a>;
                         </form>
+
 
                        
                      </div>
@@ -66,5 +69,5 @@
       <script src="StudentPages/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
       <script src="StudentPages/assets/js/script.js"></script>
    </body>
-   <!-- Mirrored from preschool.dreamguystech.com/html-template/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:40 GMT -->
+   <!-- Mirrored from preschool.dreamguystech.com/html-template/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:40 GMT -->
 </html>

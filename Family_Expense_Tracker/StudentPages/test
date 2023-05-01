@@ -1,0 +1,53 @@
+<div class="content container-fluid">
+
+<div class="page-header">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 class="page-title">Welcome
+            <?php
+                                        $subuserid = 1;
+                                           include "connexion.php";
+                                           $sql1 = "SELECT name FROM subuser WHERE id = '$subuserid';";
+                                           $result1 = mysqli_query($db,$sql1);
+                                           $username = mysqli_fetch_row($result1);
+                                        // Use the count of subusers as needed
+                                        echo $username[0];
+
+                                        ?>
+            </h3>
+            <ul class="breadcrumb">
+
+                <li class="breadcrumb-item active">User Dashboard</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+        <div class="card bg-nine w-100">
+            <div class="card-body">
+                <div class="db-widgets d-flex justify-content-between align-items-center">
+                    <div class="db-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="db-info">
+                        <h3>
+                        <?php
+                                        $subuserid =2 ; 
+                                          
+                                           $sql = "SELECT sum(amount) FROM transfer WHERE to_user_id = '$subuserid';";
+                                           $result = mysqli_query($db,$sql);
+                                           $subuser = mysqli_fetch_row($result);
+                                        
+                                        echo $subuser[0]*(-1);
+                                        ?>
+                        </h3>
+                        <h6>All Subusers</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
